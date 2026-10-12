@@ -16,9 +16,18 @@ def test_add_underflow():  # T-ADD-ERR1
 def test_sub_real():  # T-SUB-REAL1
     assert run(["push", "5", "push", "2", "sub", "pop"]) == "3 + j0"
 
+def test_sub_underflow():  # T-SUB-ERR1
+    assert run(["sub"]) == "Error: stack underflow"
 
+def test_mul_real():  # T-MUL-REAL1
+    assert run(["push", "3", "push", "-2", "mul", "pop"]) == "-6 + j0"
 
+def test_mul_underflow():  # T-MUL-ERR1
+    assert run(["mul"]) == "Error: stack underflow"
 
+def test_div_real():  # T-DIV-REAL1
+    assert run(["push", "8", "push", "2", "div", "pop"]) == "4 + j0"
 
-
+def test_div_by_zero():  # T-DIV-ERR1
+    assert run(["push", "1", "push", "0", "div"]) == "Error: division by zero"
 
