@@ -69,7 +69,7 @@ The rows from T-ABS-REAL1 onward cover the 3-student-only commands and are not i
 ## TDD workflow
 
 Each increment follows the cycle from the assignment (Kent Beck):
-1. Write the smallest failing test (our commit message: `RED: <test id>`).
-2. Write the smallest code that passes it (`GREEN: <test id>`).
+1. Write the smallest failing test.
+2. Write the smallest code that passes it.
 3. Run the full test suite to confirm no regressions.
 4. Refactor only when the suite is fully green.
