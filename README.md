@@ -5,10 +5,10 @@ Built in Python with Test-Driven Development (pytest).
 
 ## Team
 
-| Name                | Student ID |
-|---------------------|------------|
-| Yanni   | 261233238  |
-| Mahad <last name>   | <ID>       |
+| Name                | 
+|---------------------|
+| Yanni   | 
+| Mahad|
 
 ## Required commands (case-insensitive)
 
