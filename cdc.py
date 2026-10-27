@@ -7,7 +7,13 @@ def run(tokens):
 
         if token == "push":
             i += 1
-            stack.append(float(tokens[i]))
+            val_str = tokens[i]
+            if "j" in val_str:
+                r_part, im_part = val_str.rsplit("j", 1)
+                val = complex(float(r_part[:-1]), float(r_part[-1] + im_part))
+                stack.append(val)
+            else:
+                stack.append(float(val_str))
 
         elif token == "add":
             if len(stack) < 2:
@@ -53,6 +59,11 @@ def run(tokens):
         i += 1
 
 def format_number(x):
+    if isinstance(x, complex):
+        r = int(x.real) if x.real.is_integer() else x.real
+        im = int(x.imag) if x.imag.is_integer() else x.imag
+        sign = "+" if im >= 0 else "-"
+        return f"{r} {sign} j{abs(im)}"
     if x == int(x):
         x = int(x)
     return f"{x} + j0"

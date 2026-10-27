@@ -31,3 +31,6 @@ def test_div_real():  # T-DIV-REAL1
 def test_div_by_zero():  # T-DIV-ERR1
     assert run(["push", "1", "push", "0", "div"]) == "Error: division by zero"
 
+def test_push_pop_cplx_compact():  # T-PUSH-CPLX1
+    assert run(["push", "-2.5-j0.25", "pop"]) == "-2.5 - j0.25"
+
