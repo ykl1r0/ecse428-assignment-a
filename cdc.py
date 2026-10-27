@@ -14,8 +14,11 @@ def run(tokens):
                 i += 1
             val_str = "".join(num_tokens).replace(" ", "")
             if "j" in val_str:
-                r_part, im_part = val_str.rsplit("j", 1)
-                val = complex(float(r_part[:-1]), float(r_part[-1] + im_part))
+                if val_str.startswith("j") or val_str.startswith("-j"):
+                    val = complex(val_str.replace("j", "") + "j")
+                else:
+                    r_part, im_part = val_str.rsplit("j", 1)
+                    val = complex(float(r_part[:-1]), float(r_part[-1] + im_part))
                 stack.append(val)
             else:
                 stack.append(float(val_str))
