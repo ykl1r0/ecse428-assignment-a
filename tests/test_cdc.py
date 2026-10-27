@@ -37,3 +37,18 @@ def test_push_pop_cplx_compact():  # T-PUSH-CPLX1
 def test_push_pop_cplx_spaced():  # T-PUSH-CPLX2
     assert run(["push", "3", "+", "j", "4", "pop"]) == "3 + j4"
 
+def test_add_cplx():  # T-ADD-CPLX1
+    assert run(["push", "3+j4", "push", "1-j2", "add", "pop"]) == "4 + j2"
+
+def test_sub_cplx():  # T-SUB-CPLX1
+    assert run(["push", "3+j4", "push", "1-j2", "sub", "pop"]) == "2 + j6"
+
+def test_mul_cplx():  # T-MUL-CPLX1
+    assert run(["push", "1+j2", "push", "3-j4", "mul", "pop"]) == "11 + j2"
+
+def test_div_cplx():  # T-DIV-CPLX1
+    assert run(["push", "4+j2", "push", "1+j1", "div", "pop"]) == "3 - j1"
+
+def test_div_by_zero_cplx():  # T-DIV-ERR2
+    assert run(["push", "1+j0", "push", "0+j0", "div"]) == "Error: division by zero"
+
