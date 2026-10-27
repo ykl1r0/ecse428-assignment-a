@@ -62,6 +62,9 @@ def run(tokens):
 
             stack.append(a / b)
 
+        elif token == "delete":
+            stack.pop()
+        
         i += 1
 
 def format_number(x):

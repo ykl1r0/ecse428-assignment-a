@@ -52,3 +52,7 @@ def test_div_cplx():  # T-DIV-CPLX1
 def test_div_by_zero_cplx():  # T-DIV-ERR2
     assert run(["push", "1+j0", "push", "0+j0", "div"]) == "Error: division by zero"
 
+def test_delete_real():  # T-DEL-REAL1
+    assert run(["push", "1", "push", "2", "delete", "pop"]) == "1 + j0"
+
+    
