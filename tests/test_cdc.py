@@ -55,4 +55,6 @@ def test_div_by_zero_cplx():  # T-DIV-ERR2
 def test_delete_real():  # T-DEL-REAL1
     assert run(["push", "1", "push", "2", "delete", "pop"]) == "1 + j0"
 
-    
+def test_delete_cplx():  # T-DEL-CPLX1
+    assert run(["push", "1+j1", "push", "2+j3", "delete", "pop"]) == "1 + j1"
+
