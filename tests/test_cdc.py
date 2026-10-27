@@ -58,3 +58,5 @@ def test_delete_real():  # T-DEL-REAL1
 def test_delete_cplx():  # T-DEL-CPLX1
     assert run(["push", "1+j1", "push", "2+j3", "delete", "pop"]) == "1 + j1"
 
+def test_delete_underflow():  # T-DEL-ERR1
+    assert run(["delete"]) == "Error: stack underflow"

@@ -63,6 +63,8 @@ def run(tokens):
             stack.append(a / b)
 
         elif token == "delete":
+            if not stack:
+                return "Error: stack underflow"
             stack.pop()
         
         i += 1
