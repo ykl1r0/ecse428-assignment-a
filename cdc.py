@@ -81,3 +81,14 @@ def format_number(x):
     if x == int(x):
         x = int(x)
     return f"{x} + j0"
+
+
+import sys
+
+if __name__ == "__main__":
+    cli_tokens = sys.argv[1:]
+    
+    if cli_tokens:
+        result = run(cli_tokens)
+        if result is not None:
+            print(result)
