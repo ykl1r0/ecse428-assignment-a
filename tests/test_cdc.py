@@ -34,3 +34,6 @@ def test_div_by_zero():  # T-DIV-ERR1
 def test_push_pop_cplx_compact():  # T-PUSH-CPLX1
     assert run(["push", "-2.5-j0.25", "pop"]) == "-2.5 - j0.25"
 
+def test_push_pop_cplx_spaced():  # T-PUSH-CPLX2
+    assert run(["push", "3", "+", "j", "4", "pop"]) == "3 + j4"
+

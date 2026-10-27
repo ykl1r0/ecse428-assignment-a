@@ -7,13 +7,19 @@ def run(tokens):
 
         if token == "push":
             i += 1
-            val_str = tokens[i]
+            commands = {"push", "pop", "add", "sub", "mul", "div", "delete"}
+            num_tokens = []
+            while i < len(tokens) and tokens[i].lower() not in commands:
+                num_tokens.append(tokens[i])
+                i += 1
+            val_str = "".join(num_tokens).replace(" ", "")
             if "j" in val_str:
                 r_part, im_part = val_str.rsplit("j", 1)
                 val = complex(float(r_part[:-1]), float(r_part[-1] + im_part))
                 stack.append(val)
             else:
                 stack.append(float(val_str))
+            continue
 
         elif token == "add":
             if len(stack) < 2:
