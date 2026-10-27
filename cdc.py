@@ -3,7 +3,7 @@ def run(tokens):
     i = 0
 
     while i < len(tokens):
-        token = tokens[i]
+        token = tokens[i].lower()
 
         if token == "push":
             i += 1
